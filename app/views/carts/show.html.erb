@@ -51,17 +51,20 @@
 				<% end %>
 			</div>
 		</div>
-	<%else%>
-		<section class="alert alert-success d-flex align-items-center flex-column">
-			<p>Don't be shy, fill me up!</p>
+	<% else %>
+		<section
+			class="alert alert-success d-flex align-items-center flex-column"
+			style="margin: 0 6em"
+		>
+			<p style="color: black">Don't be shy, fill me up!</p>
 			<br />
 			<p class="btn btn-light">
 				<%=
 					link_to 'View our product selection',
 					        root_path,
-					        style: 'text-decoration: none; color: black'
+					        style: 'text-decoration: none; color: green'
 				%>
 			</p>
 		</section>
-	<%end%>
+	<% end %>
 </section>
