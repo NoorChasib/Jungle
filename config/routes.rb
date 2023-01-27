@@ -19,6 +19,7 @@ Rails
 		namespace :admin do
 			root to: 'dashboard#show'
 			resources :products, except: %i[edit update show]
+			resources :categories, except: %i[edit update show destroy]
 		end
 
 		# The priority is based upon order of creation: first created -> highest priority.
