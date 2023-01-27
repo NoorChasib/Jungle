@@ -48,6 +48,22 @@
 				%>
 			</ul>
 			<ul class="navbar-nav">
+				<% if current_user %>
+					<li class="nav-item">
+						<a class="nav-link disabled" style="color: white"
+							>Logged in as <%= current_user.first_name %></a>
+					</li>
+					<li class="nav_item">
+						<%= link_to 'Logout', logout_path, class: 'nav-link' %>
+					</li>
+				<% else %>
+					<li class="nav-item">
+						<%= link_to 'Login', login_path, class: 'nav-link' %>
+					</li>
+					<li class="nav_item">
+						<%= link_to 'Sign Up', signup_path, class: 'nav-link' %>
+					</li>
+				<% end %>
 				<li class="nav-item">
 					<%= link_to 'About Us', about_path, class: 'nav-link' %>
 				</li>
