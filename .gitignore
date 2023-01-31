@@ -61,3 +61,4 @@ config/secrets.yml
 
 #ignore passwork and username for development
 /config/dev_auth.rb
+.DS_Store
