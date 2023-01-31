@@ -1,0 +1,21 @@
+<h1 class="auth_header">Login</h1>
+
+<%= form_tag '/login', class: "auth_form" do %>
+	<% if @user && @user.errors.any? || @noemail %>
+		<div class="alert alert-danger">
+			<strong>The following errors prevented saving:</strong>
+			<ul>
+				<% @user && @user.errors.full_messages.each do |error| %>
+					<li><%= error %></li>
+				<% end %>
+				<% if @noemail %>
+					<li><%= @noemail %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+	Email: <%= email_field_tag :email %> Password:
+	<%= password_field_tag :password %>
+	<%= submit_tag 'Submit' %>
+<% end %>

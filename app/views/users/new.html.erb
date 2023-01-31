@@ -1,0 +1,21 @@
+<h1 class="auth_header">Sign Up!</h1>
+
+<%= form_for :user, url: '/users', html: {class: "auth_form"} do |f| %>
+	<% if @user && @user.errors.any? %>
+		<div class="alert alert-danger">
+			<strong>The following errors prevented saving:</strong>
+			<ul>
+				<% @user.errors.full_messages.each do |error| %>
+					<li><%= error %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+	First Name: <%= f.text_field :first_name %> Last Name:
+	<%= f.text_field :last_name %>
+	Email: <%= f.email_field :email %> Password:
+	<%= f.password_field :password %>
+	Password Confirmation: <%= f.password_field :password_confirmation %>
+	<%= f.submit 'Submit' %>
+<% end %>
