@@ -1,16 +1,11 @@
 <h1 class="auth_header">Login</h1>
 
 <%= form_tag '/login', class: "auth_form" do %>
-	<% if @user && @user.errors.any? || @noemail %>
+	<% if @unable_login %>
 		<div class="alert alert-danger">
-			<strong>The following errors prevented saving:</strong>
+			<strong>Could not login:</strong>
 			<ul>
-				<% @user && @user.errors.full_messages.each do |error| %>
-					<li><%= error %></li>
-				<% end %>
-				<% if @noemail %>
-					<li><%= @noemail %></li>
-				<% end %>
+				<li><%= @noemail %></li>
 			</ul>
 		</div>
 	<% end %>
